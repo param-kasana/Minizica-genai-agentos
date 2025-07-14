@@ -1,0 +1,48 @@
+# Main Docker for GeniAI AgentOS 
+# GenAI AgentOS docker
+docker compose up
+
+# Start GenAI Agents
+# Analyse Code Agent
+cd cli/agents/analyse_code_agent
+uv run python analyse_code_agent.py
+
+# Coding Agent
+cd cli/agents/coding_agent
+uv run python coding_agent.py
+
+# Email Agent
+cd cli/agents/email_agent
+uv run python email_agent.py
+
+# GitHub Agent
+cd cli/agents/github_agent
+uv run python github_agent.py
+
+# Prompt Agent
+cd cli/agents/prompt_agent
+uv run python prompt_agent.py
+
+# Resource Finder Agent
+cd cli/agents/resource_finder_agent
+uv run python resource_finder_agent.py
+
+
+# Start A2A Agents
+# Speaking Agent
+cd a2a_tts
+uv run .
+
+
+# Start the MCP Gateway for various servers
+# Atlassian MCP Server
+docker mcp gateway run --port 8899 --transport streaming --servers atlassian
+
+# Notion MCP Server
+docker mcp gateway run --port 8888 --transport streaming --servers notion
+
+# Sequential Thinking MCP Server
+docker mcp gateway run --port 8877 --transport streaming --servers sequentialthinking
+
+# DuckDuckGO MCP Server
+docker mcp gateway run --port 8866 --transport streaming --servers duckduckgo
