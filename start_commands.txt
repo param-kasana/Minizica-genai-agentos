@@ -1,8 +1,8 @@
-# Main Docker for GeniAI AgentOS 
+## Main Docker for GeniAI AgentOS 
 # GenAI AgentOS docker
 docker compose up
 
-# Start GenAI Agents
+## Start GenAI Agents
 # Analyse Code Agent
 cd cli/agents/analyse_code_agent
 uv run python analyse_code_agent.py
@@ -28,13 +28,13 @@ cd cli/agents/resource_finder_agent
 uv run python resource_finder_agent.py
 
 
-# Start A2A Agents
+## Start A2A Agents
 # Speaking Agent
 cd a2a_tts
 uv run .
 
 
-# Start the MCP Gateway for various servers
+## Start the MCP Gateway for various servers
 # Atlassian MCP Server
 docker mcp gateway run --port 8899 --transport streaming --servers atlassian
 
